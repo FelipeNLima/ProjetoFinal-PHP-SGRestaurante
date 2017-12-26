@@ -17,13 +17,16 @@ if(isset($_POST['btcadastrar'])){
     }
 }
 
-if(isset($_GET['acao']))
-{
-    switch ($_GET['acao']) {
-        case 'edit': $garcom = $objGarcom->CarregarGarcomPorID($_GET['garcom']); break;
-        case 'delet': $garcom = $objGarcom->DeletarGarcom($_GET['garcom']); break;
-        default:
-            break;
+if(isset($_POST['bteditar'])){
+    if($objGarcom->AtualizarGarcom($_POST) === 'ok')
+    {
+        header("location: ../View/Garcom.php");
+    }
+    else
+    {   
+      echo '<script type="text/javascript">alert("Erro ao Atualizar Garçom");</script>';
     }
 }
+
+
 

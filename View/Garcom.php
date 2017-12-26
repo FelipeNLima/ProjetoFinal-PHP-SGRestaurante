@@ -9,14 +9,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Garçom</title>
         <link rel="stylesheet" href="../CSS/PrincipalGarcom.css"/>
+        <script language="JavaScript" src="../JS/Modal.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     </head>
     <body>
+        
         <fieldset class="Garcomfieldset">
-            
                 <legend>Garçom</legend>
                 <div class="container">
                     <div class="row">
@@ -32,6 +33,7 @@
                         <a class="btn btn-success" role="button" data-toggle="modal" data-target="#MeuModal" href="#MeuModal">
                             <span class="glyphicon glyphicon-plus"></span>
                         </a>
+                        <form action="../Controllers/Garcom_Controller.php" method="post">
                         <div class="modal fade" id="MeuModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
@@ -39,7 +41,6 @@
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                               <h4 class="modal-title" id="myModalLabel">Cadastrar Garçom</h4>
                             </div>
-                            <form action="../Controllers/Garcom_Controller.php" method="post">
                                 <div class="modal-body">
                                         <label for="nome">Nome </label>
                                         <br>
@@ -53,10 +54,10 @@
                                   <input class="btn btn-success" type="submit" name="btcadastrar" value="Salvar">
                                   <button class="btn btn-danger" data-dismiss="modal">Sair</button>
                                 </div>
-                            </form>
                           </div>
                         </div>
-                      </div>
+                        </div>
+                        </form>
                     </div>
                     </div>
                 </div>
@@ -75,9 +76,33 @@
                             <tr>
                                 <td><?=$rst['nome_garcom']?></td>
                                 <td><?=$rst['codigo']?></td>
-                                <td><a href="?acao=edit&garcom=<?=$rst['id_garcom']?>">
-                                    <span class="btn btn-sm btn-warning glyphicon glyphicon-edit"></span>
-                                    </a>
+                                <td>
+                                    <button type="button" onclick="ModalEditGarcom()" class="btn btn-sm btn-warning glyphicon glyphicon-edit" data-toggle="modal" data-target="#MeuModalEdit" data-whatever="<?=$rst['nome_garcom']?>" data-whatevercodigo="<?=$rst['codigo']?>"></button>                                   
+                                    <form action="../Controllers/Garcom_Controller.php" method="post">
+                                    <div class="modal fade" id="MeuModalEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                    <div class="modal-dialog" role="document">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                          <h4 class="modal-title" id="myModalLabel">Atualizar Garçom</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                                <label for="nome">Nome</label>
+                                                <br>
+                                                <input class="form-control" type="text" id="recipient-name" name="nome">
+                                                <br><br>
+                                                <label for="codigo">Código </label>
+                                                <br>
+                                                <input class="form-control" type="text" id="Codigo" name="codigo">
+                                        </div>
+                                        <div class="modal-footer">
+                                                <input class="btn btn-success" type="submit" name="bteditar" value="Salvar">
+                                                <button class="btn btn-danger" data-dismiss="modal">Sair</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    </div>
+                                    </form>
                                 </td>
                                 <td><a href="?acao=delet&garcom=<?=$rst['id_garcom']?>">
                                     <span class="btn btn-sm btn-danger glyphicon glyphicon-trash"></span>
@@ -89,7 +114,8 @@
                     </div>
                     </div>
                     </div> 
-                </div>                
+                </div>
         </fieldset>
+        </form>
     </body>
 </html>

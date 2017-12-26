@@ -47,7 +47,7 @@ class Garcom {
         try{
             $this->id_Garcom = $this->$dados['id_garcom'];
             $this->nome = $this->objfunc->TratarCaracter($dados['nome'],1);
-            $this->codigo = $this->$dados['codigo'];
+            $this->codigo =(int) $this->$dados['codigo'];
             
             $query = $this->conexao->Conectar()->prepare("UPDATE GARCOM SET nome_garcom =:NOME, codigo =:CODIGO WHERE id_garcom = :IDGARCOM;");
             $query->bindParam(":IDGARCOM", $this->id_Garcom, PDO::PARAM_INT);
@@ -98,7 +98,7 @@ class Garcom {
     public function CarregarGarcomPorID($dados)
     {
         try{
-            $this->id_Garcom = $dados['id_garcom'];
+            $this->id_Garcom = (int)$dados['id_garcom'];
             $query = $this->conexao->conectar()->prepare("SELECT id_garcom, codigo, nome_garcom FROM GARCOM WHERE id_garcom = :IDGARCOM;");
             $query->bindParam(":IDGARCOM", $this->id_Garcom, PDO::PARAM_INT);
             $query->execute();
