@@ -8,10 +8,10 @@ if(isset($_POST['btcadastrar'])){
     if($objGarcom->CadastrarGarcom($_POST) === 'ok')
     {
         header("location: ../View/Garcom.php");
-        echo '<div class="alert alert-success">Dados enviado com Sucesso!</div>';
     }
     else
     {
+        
         echo '<script type="text/javascript">alert("Erro ao Cadastrar Garçom");</script>';
 
     }

@@ -9,9 +9,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Garçom</title>
         <link rel="stylesheet" href="../CSS/PrincipalGarcom.css"/>
-        <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.css" />
-        <script type="text/javascript" src="../bootstrap-3.3.7-dist/jquery-3.2.1.min.js"></script>
-        <script type="text/javascript" src="../bootstrap-3.3.7-dist/js/bootstrap.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     </head>
     <body>
         <fieldset class="Garcomfieldset">
@@ -28,9 +29,34 @@
                         </span>
                         <input type="text" name="pesquisa" class="form-control" placeholder="Digite sua pesquisa">
                     </div>
-                        <a class="btn btn-success" data-toggle="modal" href="Cadastro/CadastrarGarcom.php" id="btnCreate">
+                        <a class="btn btn-success" role="button" data-toggle="modal" data-target="#MeuModal" href="#MeuModal">
                             <span class="glyphicon glyphicon-plus"></span>
                         </a>
+                        <div class="modal fade" id="MeuModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                              <h4 class="modal-title" id="myModalLabel">Cadastrar Garçom</h4>
+                            </div>
+                            <form action="../Controllers/Garcom_Controller.php" method="post">
+                                <div class="modal-body">
+                                        <label for="nome">Nome </label>
+                                        <br>
+                                        <input class="form-control" type="text" name="nome">
+                                        <br><br>
+                                        <label for="codigo">Código </label>
+                                        <br>
+                                        <input class="form-control" type="text" name="codigo">
+                                </div>
+                                <div class="modal-footer">
+                                  <input class="btn btn-success" type="submit" name="btcadastrar" value="Salvar">
+                                  <button class="btn btn-danger" data-dismiss="modal">Sair</button>
+                                </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                     </div>
                 </div>

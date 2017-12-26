@@ -8,12 +8,12 @@
     <title>Home</title>
     <link rel="stylesheet" href="../CSS/Principal.css" />
     <link rel="stylesheet" href="../../bootstrap-3.3.7-dist/css/bootstrap.css" />
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <script type="text/javascript" src="../../bootstrap-3.3.7-dist/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="../../bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <script src="../JS/Principal.js"></script>
 </head>
 <body>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <div class="nav-side-menu">
         <div class="brand">Usuario Logado</div>
         <i class="fa fa-user-o fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
@@ -23,8 +23,6 @@
                 <ul id="menu-content" class="menu-content collapse out">
                     <li>
                       <a href="#"><i class="fa fa-cutlery fa-lg"></i> Mesas</a>
-                        
-                      </a>
                     </li>
     
                     <li  data-toggle="collapse" data-target="#products" class="collapsed active">
