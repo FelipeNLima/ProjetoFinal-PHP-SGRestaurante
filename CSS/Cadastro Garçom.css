@@ -1,0 +1,17 @@
+.formcadastrogarcom{
+    margin: 0 auto;
+    width: 970px;
+}
+
+.inputsair{
+    margin-left: 915px;
+    margin-top: -38px;
+}
+
+h2{
+    text-align: center;
+}
+
+.form-control{
+    min-width:300px;
+}
