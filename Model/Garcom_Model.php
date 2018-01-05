@@ -28,6 +28,7 @@ class Garcom {
         try{
             $this->nome = $dados['nome'];
             $this->codigo = (int) $dados['codigo'];
+            
             $query = $this->conexao->Conectar()->prepare("INSERT INTO GARCOM (nome_garcom, codigo)  VALUES (:NOME, :CODIGO)");
             $query->bindParam(":NOME", $this->nome, PDO::PARAM_STR);
             $query->bindParam(":CODIGO", $this->codigo, PDO::PARAM_INT);
@@ -45,20 +46,20 @@ class Garcom {
     public function AtualizarGarcom($dados)
     {
         try{
-            $this->id_Garcom = $this->$dados['id_garcom'];
+            $this->id_Garcom = (int) $dados['id'];
             $this->nome = $this->objfunc->TratarCaracter($dados['nome'],1);
-            $this->codigo =(int) $this->$dados['codigo'];
+            $this->codigo = (int) $dados['codigo'];
             
-            $query = $this->conexao->Conectar()->prepare("UPDATE GARCOM SET nome_garcom =:NOME, codigo =:CODIGO WHERE id_garcom = :IDGARCOM;");
+            $query = $this->conexao->Conectar()->prepare("UPDATE GARCOM SET nome_garcom =:NOME, codigo =:CODIGO WHERE id_garcom = :IDGARCOM");
             $query->bindParam(":IDGARCOM", $this->id_Garcom, PDO::PARAM_INT);
             $query->bindParam(":NOME", $this->nome, PDO::PARAM_STR);
-            $query->bindParam(":CODIGO", $this->codigo, PDO::PARAM_INT);
+            $query->bindParam(":CODIGO",  $this->codigo, PDO::PARAM_INT);
             
             if($query->execute())
             {
-                return true;
+                return 'ok';
             }else{
-                return false;
+                return 'erro';
             }
         } catch (PDOException $ex) {
             return 'error' .$ex->getMessage();

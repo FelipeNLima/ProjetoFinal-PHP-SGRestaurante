@@ -74,10 +74,11 @@
                             </tr>
                         <?php foreach($objCarregar->CarregarGarcom() as $rst){ ?>
                             <tr>
+                                <td style="display:none"><?=$rst['id_garcom']?></td>
                                 <td><?=$rst['nome_garcom']?></td>
                                 <td><?=$rst['codigo']?></td>
                                 <td>
-                                    <button type="button" onclick="ModalEditGarcom()" class="btn btn-sm btn-warning glyphicon glyphicon-edit" data-toggle="modal" data-target="#MeuModalEdit" data-whatever="<?=$rst['nome_garcom']?>" data-whatevercodigo="<?=$rst['codigo']?>"></button>                                   
+                                    <button type="button" onclick="ModalEditGarcom()" class="btn btn-sm btn-warning glyphicon glyphicon-edit" data-toggle="modal" data-target="#MeuModalEdit"  data-whatever="<?=$rst['nome_garcom']?>" data-whatevercodigo="<?=$rst['codigo']?>" data-whateverid="<?=$rst['id_garcom']?>"></button>                                   
                                     <form action="../Controllers/Garcom_Controller.php" method="post">
                                     <div class="modal fade" id="MeuModalEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                     <div class="modal-dialog" role="document">
@@ -87,6 +88,7 @@
                                           <h4 class="modal-title" id="myModalLabel">Atualizar Garçom</h4>
                                         </div>
                                         <div class="modal-body">
+                                                <input style="display:none" class="form-control" type="text" id="Id" name="id">
                                                 <label for="nome">Nome</label>
                                                 <br>
                                                 <input class="form-control" type="text" id="recipient-name" name="nome">
