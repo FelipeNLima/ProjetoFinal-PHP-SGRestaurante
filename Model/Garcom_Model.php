@@ -69,17 +69,16 @@ class Garcom {
     public function DeletarGarcom($dados)
     {
         try{
-            $this->id_Garcom = $this->$dados['id_garcom'];
-            $query = $this->conexao->Conectar()->prepare("DELETE FROM GARCOM WHERE id_garcom = :IDGARCOM;");
+            $this->id_Garcom = (int) $dados['id'];
+            $query = $this->conexao->Conectar()->prepare("DELETE FROM GARCOM WHERE id_garcom = :IDGARCOM");
             $query->bindParam(":IDGARCOM", $this->id_Garcom, PDO::PARAM_INT);
             
             if($query->execute())
             {
-                return true;
+                return 'ok';
             }else{
-                return false;
+                return 'erro';
             }
-            
         } catch (PDOException $ex) {
             return 'error' .$ex->getMessage();
         }
@@ -100,7 +99,7 @@ class Garcom {
     {
         try{
             $this->id_Garcom = (int)$dados['id_garcom'];
-            $query = $this->conexao->conectar()->prepare("SELECT id_garcom, codigo, nome_garcom FROM GARCOM WHERE id_garcom = :IDGARCOM;");
+            $query = $this->conexao->conectar()->prepare("SELECT id_garcom, codigo, nome_garcom FROM GARCOM WHERE id_garcom = :IDGARCOM");
             $query->bindParam(":IDGARCOM", $this->id_Garcom, PDO::PARAM_INT);
             $query->execute();
             return $query->fetchAll();
@@ -110,7 +109,7 @@ class Garcom {
             
         }
     }
-    
+       
 }
 
 ?>

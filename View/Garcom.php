@@ -28,7 +28,9 @@
                                 <span class="glyphicon glyphicon-search"></span>
                             </button>
                         </span>
-                        <input type="text" name="pesquisa" class="form-control" placeholder="Digite sua pesquisa">
+                        <form action="../Controllers/Garcom_Controller.php" method="post">
+                            <input type="text" name="pesquisa" class="form-control" placeholder="Digite sua pesquisa">
+                        </form>
                     </div>
                         <a class="btn btn-success" role="button" data-toggle="modal" data-target="#MeuModal" href="#MeuModal">
                             <span class="glyphicon glyphicon-plus"></span>
@@ -106,8 +108,29 @@
                                     </div>
                                     </form>
                                 </td>
-                                <td><a href="?acao=delet&garcom=<?=$rst['id_garcom']?>">
-                                    <span class="btn btn-sm btn-danger glyphicon glyphicon-trash"></span>
+                                <td style="display:none"><?=$rst['id_garcom']?></td>
+                                <td>
+                                    <button type="button" onclick="ModalDeleteGarcom()" class="btn btn-sm btn-danger glyphicon glyphicon-trash" data-toggle="modal" data-target="#MeuModalDelete" data-whateverid="<?=$rst['id_garcom']?>"></button>
+                                    <form action="../Controllers/Garcom_Controller.php" method="post">
+                                    <div class="modal fade" id="MeuModalDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                    <div class="modal-dialog" role="document">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                          <h4 class="modal-title" id="myModalLabel">Deletar Garçom</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                                <input style="display:none" class="form-control" type="text" id="Id" name="id">
+                                                <p>Deseja Realmente Deletar esse Garçom?</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                                <input class="btn btn-success" type="submit" name="btdeletar" value="Sim">
+                                                <button class="btn btn-danger" data-dismiss="modal">Não</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    </div>
+                                    </form>
                                     </a>
                                 </td>
                             </tr>
