@@ -1,7 +1,7 @@
 <?php
 
 include '../Model/Garcom_Model.php';
-include '../Conexao.php';
+
 
 $objGarcom = new Garcom();
 

@@ -31,9 +31,7 @@ id_caixa					int
 CREATE TABLE GARCOM (
 id_garcom					int		PRIMARY KEY		AUTO_INCREMENT,
 codigo						int,
-taxa_servico				decimal(9,2),
-nome_garcom					varchar(50),
-apagado						bit
+nome_garcom					varchar(50)
 );
 
 CREATE TABLE CATEGORIAPRODUTO (
@@ -66,10 +64,11 @@ apagado						bit,
 id_categoriacardapio		int
 );
 
+
 CREATE TABLE MESA (
 id_mesa						int		PRIMARY KEY		AUTO_INCREMENT,
 Numero_mesas				int,
-Status						tinyint
+Status						int
 );
 
 CREATE TABLE CONSUMO (
@@ -143,10 +142,28 @@ ALTER TABLE VENDA			 ADD FOREIGN KEY(id_garcom)				REFERENCES GARCOM (id_garcom)
 
 
 
-INSERT INTO Login
+INSERT INTO LOGIN
 	(Usuario,Senha)
  VALUES
 	('admin','123');
 
+select * from LOGIN ;
+
+select * from GARCOM;
+
+select * from GARCOM where nome_garcom like '%f%';
+
+select * from MESA;
 
 
+DELIMITER //
+CREATE PROCEDURE _while ()
+BEGIN
+DECLARE x INT DEFAULT 1;
+WHILE x <= 100 DO
+	INSERT INTO MESA (Numero_mesas,Status)  VALUES 
+		(x,0);
+	set x = x+1;
+END WHILE;
+END;
+DELIMITER ;
