@@ -18,7 +18,7 @@
     <body>
         
          <div class="container">
-             <div class="row" style="    margin-right: -73px; margin-left: 216px; margin-top: 8px;">
+             <div class="row">
                 <div class="panel panel-primary">
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped ">

@@ -16,7 +16,6 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     </head>
     <body>
-        
         <fieldset class="Garcomfieldset">
                 <legend>Garçom</legend>
                 <div class="container">
@@ -38,7 +37,7 @@
                         <form action="../Controllers/Garcom_Controller.php" method="post">
                         <div class="modal fade" id="MeuModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                         <div class="modal-dialog" role="document">
-                          <div class="modal-content">
+                            <div class="modal-content" style="margin-top:68px;">
                             <div class="modal-header">
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                               <h4 class="modal-title" id="myModalLabel">Cadastrar Garçom</h4>
@@ -141,6 +140,5 @@
                     </div> 
                 </div>
         </fieldset>
-        </form>
     </body>
 </html>

@@ -14,63 +14,57 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <div class="nav-side-menu">
-        <div class="brand">Usuario Logado</div>
-        <i class="fa fa-user-o fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
-            <div class="menu-list">
-                <ul id="menu-content" class="menu-content collapse out">
-                    <li>
-                        <a href="Mesa.php"><i class="fa fa-cutlery fa-lg"></i> Mesas</a>
-                    </li>
-                    <li  data-toggle="collapse" data-target="#products" class="collapsed active">
-                      <a href="#"><i class="fa fa-plus-circle fa-lg"></i> Cadastro<span class="arrow"></span></a>
-                    </li>
-                    <ul class="sub-menu collapse" id="products">
-                        <li class="active"><a href="Garcom.php" target="iframes">Garçom</a></li>
-                        <li><a href="Categoria.php">Categoria</a></li>
-                        <li><a href="Produto.php">Produto</a></li>
-                        <li><a href="Cardapio.php">Cardapio</a></li>
-                        <li><a href="FormaPagamento.php">Forma de Pagamento</a></li>
-                        <li><a href="BandeiraCartao.php">Bandeira de Cartão</a></li>
-                        <li><a href="Usuario.php">Usuario</a></li>
-                    </ul>
-    
-                    <li data-toggle="collapse" data-target="#service" class="collapsed">
-                      <a href="#"><i class="fa fa-file-pdf-o fa-lg"></i> Relatórios <span class="arrow"></span></a>
-                    </li>  
-                    <ul class="sub-menu collapse" id="service">
-                      <li>New Service 1</li>
-                      <li>New Service 2</li>
-                      <li>New Service 3</li>
-                    </ul>
-    
-    
-                    <li data-toggle="collapse" data-target="#new" class="collapsed">
-                      <a href="#"><i class="fa fa-user fa-lg"></i> Usuario <span class="arrow"></span></a>
-                    </li>
-                    <ul class="sub-menu collapse" id="new">
-                      <li>New New 1</li>
-                      <li>New New 2</li>
-                      <li>New New 3</li>
-                    </ul>
-
-                    <li data-toggle="collapse" data-target="#new" class="collapsed">
-                        <a href="#"><i class="fa fa-bar-chart fa-lg"></i> Gráficos <span class="arrow"></span></a>
-                    </li>
-                        <ul class="sub-menu collapse" id="new">
-                            <li>New New 1</li>
-                            <li>New New 2</li>
-                            <li>New New 3</li>
-                        </ul>
-                </ul>
-         </div>
-    </div>
-            <iframe name="iframes" width="1365" height="660" frameborder="0"></iframe>
-     
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Restaurante X</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+                                            <li class="dropdown">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user fa-lg"></i> Usuários <span class="caret"></span></a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="Usuario.php">Cadastrar Usuario</a></li>
+                                                    <li><a href="Usuario.php">Nivel de Acesso</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="Mesa.php"><i class="fa fa-cutlery fa-lg"></i> Mesas</a></li>
+					<li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-plus-circle fa-lg"></i> Cadastrar <span class="caret"></span></a>
+                                            <ul class="dropdown-menu">
+						<li><a href="Garcom.php" target="iframes">Garçom</a></li>
+						<li><a href="Categoria.php">Categoria</a></li>
+                                                <li><a href="Produto.php">Produto</a></li>
+                                                <li><a href="Cardapio.php">Cardapio</a></li>
+                                                <li><a href="FormaPagamento.php">Forma de Pagamento</a></li>
+                                                <li><a href="BandeiraCartao.php">Bandeira de Cartão</a></li>
+                                            </ul>
+                                        </li>
+                                            <li class="dropdown">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-file-pdf-o fa-lg"></i> Relatórios <span class="caret"></span></a>
+                                                <ul class="dropdown-menu">
+                               
+                                                </ul>
+                                            </li>
+				</ul>
+                            <div class="navbar-form navbar-right">					
+				<a href="sair.php"><button type="submit" class="btn btn-success">Sair</button></a>
+                            </div>
+			</div><!--/.nav-collapse -->
+		</div>
+    </nav>
+        <iframe name="iframes" width="1365" height="660" frameborder="0"></iframe>
 </body>
 </html>
 
