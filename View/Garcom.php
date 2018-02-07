@@ -8,7 +8,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Garçom</title>
-        <link rel="stylesheet" href="../CSS/PrincipalGarcom.css"/>
+        <link rel="stylesheet" href="../CSS/PrincipalGarcom.css">
         <script language="JavaScript" src="../JS/Modal.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -16,8 +16,8 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <fieldset class="Garcomfieldset">
-                <legend>Garçom</legend>
+        <fieldset class="garcomfieldset">
+            <legend>Garçom</legend>
                 <div class="container">
                     <div class="row">
                     <div class="form-group form-inline">
@@ -79,11 +79,11 @@
                                 <td><?=$rst['nome_garcom']?></td>
                                 <td><?=$rst['codigo']?></td>
                                 <td>
-                                    <button type="button" onclick="ModalEditGarcom()" class="btn btn-sm btn-warning glyphicon glyphicon-edit" data-toggle="modal" data-target="#MeuModalEdit"  data-whatever="<?=$rst['nome_garcom']?>" data-whatevercodigo="<?=$rst['codigo']?>" data-whateverid="<?=$rst['id_garcom']?>"></button>                                   
+                                    <button type="button"  data-dismiss="modal" onclick="ModalEditGarcom()" class="btn btn-sm btn-warning glyphicon glyphicon-edit" data-toggle="modal" data-target="#MeuModalEdit"  data-whatever="<?=$rst['nome_garcom']?>" data-whatevercodigo="<?=$rst['codigo']?>" data-whateverid="<?=$rst['id_garcom']?>"></button>                                   
                                     <form action="../Controllers/Garcom_Controller.php" method="post">
                                     <div class="modal fade" id="MeuModalEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                     <div class="modal-dialog" role="document">
-                                      <div class="modal-content">
+                                      <div class="modal-content" style="margin-top:68px;">
                                         <div class="modal-header">
                                           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                           <h4 class="modal-title" id="myModalLabel">Atualizar Garçom</h4>
@@ -113,7 +113,7 @@
                                     <form action="../Controllers/Garcom_Controller.php" method="post">
                                     <div class="modal fade" id="MeuModalDelete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                                     <div class="modal-dialog" role="document">
-                                      <div class="modal-content">
+                                      <div class="modal-content" style="margin-top:68px;">
                                         <div class="modal-header">
                                           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                           <h4 class="modal-title" id="myModalLabel">Deletar Garçom</h4>

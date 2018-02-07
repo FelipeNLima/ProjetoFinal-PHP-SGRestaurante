@@ -35,8 +35,7 @@
                                             <li class="dropdown">
                                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user fa-lg"></i> Usuários <span class="caret"></span></a>
                                                 <ul class="dropdown-menu">
-                                                    <li><a href="Usuario.php">Cadastrar Usuario</a></li>
-                                                    <li><a href="Usuario.php">Nivel de Acesso</a></li>
+                                                    <li><a href="Usuario.php" target="iframes">Cadastrar Usuario</a></li>
                                                 </ul>
                                             </li>
                                             <li><a href="Mesa.php"><i class="fa fa-cutlery fa-lg"></i> Mesas</a></li>
@@ -44,11 +43,11 @@
                                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-plus-circle fa-lg"></i> Cadastrar <span class="caret"></span></a>
                                             <ul class="dropdown-menu">
 						<li><a href="Garcom.php" target="iframes">Garçom</a></li>
-						<li><a href="Categoria.php">Categoria</a></li>
-                                                <li><a href="Produto.php">Produto</a></li>
-                                                <li><a href="Cardapio.php">Cardapio</a></li>
-                                                <li><a href="FormaPagamento.php">Forma de Pagamento</a></li>
-                                                <li><a href="BandeiraCartao.php">Bandeira de Cartão</a></li>
+						<li><a href="Categoria.php" target="iframes">Categoria</a></li>
+                                                <li><a href="Produto.php" target="iframes">Produto</a></li>
+                                                <li><a href="Cardapio.php" target="iframes">Cardapio</a></li>
+                                                <li><a href="FormaPagamento.php" target="iframes">Forma de Pagamento</a></li>
+                                                <li><a href="BandeiraCartao.php" target="iframes">Bandeira de Cartão</a></li>
                                             </ul>
                                         </li>
                                             <li class="dropdown">
@@ -58,7 +57,7 @@
                                                 </ul>
                                             </li>
 				</ul>
-                            <div class="navbar-form navbar-right">					
+                            <div class="navbar-form navbar-right" style= "margin-right: -50px;">					
 				<a href="sair.php"><button type="submit" class="btn btn-success">Sair</button></a>
                             </div>
 			</div><!--/.nav-collapse -->
