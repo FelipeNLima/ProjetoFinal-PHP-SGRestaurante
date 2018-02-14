@@ -1,10 +1,7 @@
 <?php
-    include '../Model/Usuario_Model.php';
     include '../Model/Cargo_Model.php';
-    $objCarregar = new Usuario();
     $obj = new Cargo();
 ?>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -54,19 +51,18 @@
                                 <br>
                                 <input class="form-control" type="text" name="usuario">
                                 <br><br>
-                                <label for="senha">Senha </label>
+                                <label for="senha" >Senha </label>
                                 <br>
-                                <input class="form-control" type="text" name="senha">
+                                <input class="form-control" type="password" name="senha">
                                 <br><br>
-                                <label for="nivel">Cargo</label>
+                                <label for="cargo">Cargo</label>
                                 <br>
-                                <input type=text class="form-control" name="nivel">
-                                <?php foreach($objcarregar->CarregarCargo() as $rst){ ?>
-                                    <select> 
-                                        <option value=""><?=$rst['cargo']?></option>
-                                    </select>
+                                <select name="cargo" class="form-control">
+                                <?php foreach($obj->CarregarCargo() as $rst) { ?>
+                                    <option style="display:none"><?=$rst['id_cargo']?></option>
+                                    <option><?=$rst['cargo']?></option>
                                 <?php } ?>
-                            </div>
+                                </select>
                                 <div class="modal-footer">
                                   <input class="btn btn-success" type="submit" name="btcadastrar" value="Salvar">
                                   <button class="btn btn-danger" data-dismiss="modal">Sair</button>

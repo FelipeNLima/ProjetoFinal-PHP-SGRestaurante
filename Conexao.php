@@ -12,7 +12,7 @@ Class Conexao
     public function __construct()
     {
         $this->servidor = "localhost";
-        $this->banco = "bd_restaurante";
+        $this->banco = "BD_RESTAURANTE";
         $this->usuario = "root";
         $this->senha = "";
     }
